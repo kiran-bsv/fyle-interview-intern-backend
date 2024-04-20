@@ -26,7 +26,6 @@ def test_grade_assignment_draft_assignment(client, h_principal):
         },
         headers=h_principal
     )
-
     assert response.status_code == 400
 
 
@@ -60,3 +59,4 @@ def test_regrade_assignment(client, h_principal):
 
     assert response.json['data']['state'] == AssignmentStateEnum.GRADED.value
     assert response.json['data']['grade'] == GradeEnum.B
+
